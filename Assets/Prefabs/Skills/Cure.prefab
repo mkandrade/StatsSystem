@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5106316525742393873}
   - component: {fileID: 430758181120731479}
   m_Layer: 0
-  m_Name: Purge
+  m_Name: Cure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,4 +85,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 393d8c5ba3401154c909feab8406170e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
+  Type: 1
