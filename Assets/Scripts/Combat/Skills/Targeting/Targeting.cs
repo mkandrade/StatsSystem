@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class Targeting : MonoBehaviour
 {
-    public abstract StatSystem GetTarget();
+    public abstract Unit GetTarget();
 }

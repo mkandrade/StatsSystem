@@ -5,8 +5,8 @@ using UnityEngine;
 public class CombatSim : MonoBehaviour
 {
 
-    public StatSystem Attacker;
-    public StatSystem Defender;
+    public Unit Attacker;
+    public Unit Defender;
 
     public StatEnum Stat;
 
@@ -18,7 +18,6 @@ public class CombatSim : MonoBehaviour
             Attacker.GetAbilityScore(Stat));
     }
 
-
     [ContextMenu("StartFight")]
     void StartFight()
     {
@@ -28,12 +27,14 @@ public class CombatSim : MonoBehaviour
 
     IEnumerator Fight()
     {
-        StatSystem lastAttacked;
+        Unit lastAttacked;
         do
         {
             Debug.LogFormat("{0}'s turn", Attacker.name);
+            // CHama efeitos de começo do turno da unidade
+            Attacker.OnturnBegin();
 
-            Skill skill =  GetSkills();
+            Skill skill = GetSkills();
 
             // Faz o target conforme necessidade de cada skill
             skill.UseSkill(skill.GetComponent<Targeting>().GetTarget());
@@ -42,7 +43,7 @@ public class CombatSim : MonoBehaviour
             Defender = Attacker;
             Attacker = lastAttacked;
 
-            yield return new WaitForSecondsRealtime(1);
+            yield return new WaitForSecondsRealtime(1.5f);
 
         } while (lastAttacked.GetStat(StatEnum.HP).Value > 0);
         Debug.LogFormat("{0} was killed", lastAttacked.name);

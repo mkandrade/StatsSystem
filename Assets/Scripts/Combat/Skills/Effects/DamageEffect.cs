@@ -8,7 +8,7 @@ public class DamageEffect : Effect
     public List<StatsEffectiveness> AttackerStats;
     public StatEnum DefenderStat;
 
-    public override void ApllyEffect(StatSystem attacker, StatSystem defender)
+    public override void ApllyEffect(Unit attacker, Unit defender)
     {
         float attackerScore = StatSCalculateScore(attacker, AttackerStats);
         float defenderScore = defender.GetAbilityScore(DefenderStat);
@@ -19,13 +19,14 @@ public class DamageEffect : Effect
         float finalScore = roll * score;
 
         // Para Apenas Retirar Vida -finalScore
-        defender.ChangeHP(Mathf.CeilToInt(-finalScore));
+        defender.ChangeHP(Mathf.Min(0, Mathf.CeilToInt(-finalScore)));
 
         Debug.LogFormat("{0} Suffered {1} of Damage",
             defender.name, finalScore);
     }
 
-    float StatSCalculateScore(StatSystem unit, List<StatsEffectiveness> statsToCalculate)
+    float StatSCalculateScore(Unit unit,
+        List<StatsEffectiveness> statsToCalculate)
     {
         float sum = 0;
         foreach (StatsEffectiveness statType in statsToCalculate)

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class TargetRandomEnemy : Targeting
 {
-    public override StatSystem GetTarget()
+    public override Unit GetTarget()
     {
         Team team = GetComponentInParent<Team>();
-        StatSystem[] enemyUnits = team.EnemyTeam.GetComponentsInChildren<StatSystem>();
+        Unit[] enemyUnits = team.EnemyTeam.GetComponentsInChildren<Unit>();
         int roll = Random.Range(0, enemyUnits.Length);
 
         return enemyUnits[roll];

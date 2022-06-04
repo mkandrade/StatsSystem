@@ -6,9 +6,9 @@ using UnityEngine;
 public class InflictEffect : Effect
 {
     public Status StatusToInflict;
-    public bool stackable;
+    public bool Stackable;
 
-    public override void ApllyEffect(StatSystem attacker, StatSystem defender)
+    public override void ApllyEffect(Unit attacker, Unit defender)
     {
         Transform statusHolder = defender.transform.Find("Status");
 
@@ -18,19 +18,19 @@ public class InflictEffect : Effect
             return;
         }
 
-        Status status =  Instantiate(StatusToInflict, Vector3.zero, Quaternion.identity, statusHolder);
+        Status status = Instantiate(StatusToInflict, Vector3.zero, Quaternion.identity, statusHolder);
         status.name = status.name.Replace(("(Clone)"), "");
     }
 
     private bool CanAplly(Transform statusHolder)
     {
-        if (stackable)
+        if (Stackable)
         {
             return true;
         }
 
         // Caso encontre algum status com o mesmo status, return false
-        for(int i = 0; i < statusHolder.childCount; i++)
+        for (int i = 0; i < statusHolder.childCount; i++)
         {
             if (statusHolder.GetChild(i).name == StatusToInflict.name)
             {

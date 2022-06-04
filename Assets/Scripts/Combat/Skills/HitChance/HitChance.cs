@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class HitChance : MonoBehaviour
 {
-    public abstract bool CalculateHitChance(StatSystem attacker, StatSystem defender);
+    public abstract bool CalculateHitChance(Unit attacker, Unit defender);
 }

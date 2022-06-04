@@ -6,12 +6,12 @@ public class HitChanceFixed : HitChance
 {
     public float Value;
 
-    public override bool CalculateHitChance(StatSystem attacker, StatSystem defender)
+    public override bool CalculateHitChance(Unit attacker, Unit defender)
     {
         int roll = Random.Range(0, 101);
         Debug.LogFormat("ROLL {0}", roll);
 
-        if(roll > Value)
+        if (roll > Value)
         {
             Debug.Log("MISS");
             return false;

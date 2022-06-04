@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StatSystem : MonoBehaviour
+// Delegate, "Variável que você poe métodos dentro, então você chama ela e vai rodar todos os métodos ali dentro"
+public delegate void OnturnBegin();
+public class Unit : MonoBehaviour
 {
+    public OnturnBegin OnturnBegin = delegate { };
+
     [SerializeField]
     Stat[] Stats = new Stat[(int)StatEnum.Wisdom + 1];
 

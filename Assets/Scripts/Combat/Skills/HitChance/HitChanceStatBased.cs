@@ -10,7 +10,7 @@ public class HitChanceStatBased : HitChance
     public StatEnum AttackerStat;
     public StatEnum DefenderStat;
 
-    public override bool CalculateHitChance(StatSystem attacker, StatSystem defender)
+    public override bool CalculateHitChance(Unit attacker, Unit defender)
     {
         float attackerScore = attacker.GetAbilityScore(AttackerStat);
         float defenderScore = defender.GetAbilityScore(DefenderStat);

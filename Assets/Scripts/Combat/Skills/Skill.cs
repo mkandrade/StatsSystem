@@ -5,17 +5,17 @@ using UnityEngine;
 public class Skill : MonoBehaviour
 {
 
-    StatSystem attacker;
+    Unit attacker;
 
     void Awake()
     {
-        // Saber quem está invocando
-        attacker = GetComponentInParent<StatSystem>(); 
+        // Saber quem estï¿½ invocando
+        attacker = GetComponentInParent<Unit>();
     }
 
-    public void UseSkill(StatSystem defender)
+    public void UseSkill(Unit defender)
     {
-        if(GetComponentInParent<HitChance>().CalculateHitChance(attacker, defender))
+        if (GetComponentInParent<HitChance>().CalculateHitChance(attacker, defender))
         {
             GetComponentInParent<Effect>().ApllyEffect(attacker, defender);
         }
