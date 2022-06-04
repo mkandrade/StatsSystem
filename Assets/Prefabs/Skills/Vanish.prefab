@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1422836817647750369
+--- !u!1 &5072684976538485965
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,25 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 259487929150122256}
-  - component: {fileID: 1800593457049521676}
-  - component: {fileID: 1658149871963769224}
-  - component: {fileID: 1570076640361344013}
-  - component: {fileID: 3279954037662087981}
+  - component: {fileID: 6215742047241560380}
+  - component: {fileID: 5559654869014414880}
+  - component: {fileID: 7181794090692645773}
+  - component: {fileID: 1571089811632803690}
+  - component: {fileID: 5720155140858139933}
   m_Layer: 0
-  m_Name: Heal
+  m_Name: Vanish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &259487929150122256
+--- !u!4 &6215742047241560380
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422836817647750369}
+  m_GameObject: {fileID: 5072684976538485965}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -35,55 +35,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1800593457049521676
+--- !u!114 &5559654869014414880
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422836817647750369}
+  m_GameObject: {fileID: 5072684976538485965}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e4a340f5fd953947b48533139eee12e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1658149871963769224
+--- !u!114 &7181794090692645773
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422836817647750369}
+  m_GameObject: {fileID: 5072684976538485965}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d83cd9e2c3fbaa47b8c89607a0b0bad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Value: 100
---- !u!114 &1570076640361344013
+--- !u!114 &1571089811632803690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422836817647750369}
+  m_GameObject: {fileID: 5072684976538485965}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebd863f6e287d344cb6e8aee7b660f98, type: 3}
+  m_Script: {fileID: 11500000, guid: a32661be49f7001488be9d4d15a16792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 0.5
-  AttackerStat: 8
---- !u!114 &3279954037662087981
+  StatusToInflict: {fileID: 8781348984756697767, guid: 01825795e6b2d594fad2890962d388bc, type: 3}
+  Stackable: 0
+--- !u!114 &5720155140858139933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422836817647750369}
+  m_GameObject: {fileID: 5072684976538485965}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1289bbcdc9bb044ebe9fbc555a158f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b758638b0173cb428d74cc30a54463c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LowHPTreshold: 0.75

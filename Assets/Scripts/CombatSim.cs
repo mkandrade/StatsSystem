@@ -37,7 +37,18 @@ public class CombatSim : MonoBehaviour
             Skill skill = GetSkills();
 
             // Faz o target conforme necessidade de cada skill
-            skill.UseSkill(skill.GetComponent<Targeting>().GetTarget());
+            Unit target = skill.GetComponent<Targeting>().GetTarget();
+
+            // Posibila que Tenha Targets diferentes, que não necessariamente consigam encontrar algum alvo adequado, dependendo da situação.
+            if (target != null)
+            {
+                skill.UseSkill(target);
+            }
+            else
+            {
+                Debug.Log("No valid target");
+            }
+
 
             lastAttacked = Defender;
             Defender = Attacker;
