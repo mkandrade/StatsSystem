@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5072684976538485965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6215742047241560380}
+  - component: {fileID: 5559654869014414880}
+  - component: {fileID: 6236542369992567176}
+  - component: {fileID: 7886547690846303047}
+  - component: {fileID: 7536647422934078573}
+  - component: {fileID: 1564928243393475770}
+  m_Layer: 0
+  m_Name: PoisonStab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6215742047241560380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5072684976538485965}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5559654869014414880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5072684976538485965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e4a340f5fd953947b48533139eee12e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6236542369992567176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5072684976538485965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa6d1d92ac1766488135c9cc596b8c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitChanceObjective: 70
+  AttackerStat: 5
+  DefenderStat: 7
+--- !u!114 &7886547690846303047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5072684976538485965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35104a73dd03be64194da35c314bdde0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7536647422934078573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5072684976538485965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a32661be49f7001488be9d4d15a16792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StatusToInflict: {fileID: 8781348984756697767, guid: e24e41891ed0ea740ab6b8df9a02e6e6, type: 3}
+  Stackable: 1
+--- !u!114 &1564928243393475770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5072684976538485965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 784cb3b6d0685cb4fae4dd428937e9cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackerStats:
+  - Stat: 5
+    Multiplier: 0.2
+  DefenderStat: 6

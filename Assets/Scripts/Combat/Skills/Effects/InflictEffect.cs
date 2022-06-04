@@ -21,6 +21,7 @@ public class InflictEffect : Effect
 
         Status status = Instantiate(StatusToInflict, Vector3.zero, Quaternion.identity, statusHolder);
         status.name = status.name.Replace(("(Clone)"), "");
+        status.SetActors(attacker, defender);
     }
 
     private bool CanAplly(Transform statusHolder)
