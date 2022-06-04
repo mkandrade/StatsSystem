@@ -39,5 +39,19 @@ Utilizando Unity Engine, Editor Version 2021.3.2f1.
 ### Combate por Turnos:
 - Sistema de combate simples por turnos, com a finalidade de testar as skills e o balanceamento de classes/stats.
 
+### 🔧 Simulação dos Stats
+
+* Tank.
+<img src="https://github.com/mkandrade/StatsSystem/blob/master/Assets/Images/HH%20Tower%20-%20Stats%20And%20Skills%20-%20Simulation/Tank.png" alt="Rata Alada">
+
+* Ranged.
+<img src="https://github.com/mkandrade/StatsSystem/blob/master/Assets/Images/HH%20Tower%20-%20Stats%20And%20Skills%20-%20Simulation/Ranged.png" alt="Rata Alada">
+
+* Physic Dps.
+<img src="https://github.com/mkandrade/StatsSystem/blob/master/Assets/Images/HH%20Tower%20-%20Stats%20And%20Skills%20-%20Simulation/PhysDps.png" alt="Rata Alada">
+
+* Caster.
+<img src="https://github.com/mkandrade/StatsSystem/blob/master/Assets/Images/HH%20Tower%20-%20Stats%20And%20Skills%20-%20Simulation/Caster.png" alt="Rata Alada">
+
 ##
 <p align="center">mkandrade</p>
