@@ -5,7 +5,7 @@ using UnityEngine;
 public class TemporaryStatus : Status
 {
     public int InitialDuration = 1;
-    private int CurrentCuration = 1;
+    public int CurrentCuration = 1;
 
     // Quando Prefab for invocado
     void OnEnable()

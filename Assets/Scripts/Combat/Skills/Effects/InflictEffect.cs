@@ -12,9 +12,10 @@ public class InflictEffect : Effect
     {
         Transform statusHolder = defender.transform.Find("Status");
 
+        // Caso não possa realizar o stack, reseta a duração.
         if (!CanAplly(statusHolder))
         {
-            Debug.Log("Couldn't apply");
+            ResetDuration(statusHolder);
             return;
         }
 
@@ -39,5 +40,18 @@ public class InflictEffect : Effect
         }
 
         return true;
+    }
+
+    void ResetDuration(Transform statusHolder)
+    {
+        TemporaryStatus[] status = statusHolder.GetComponentsInChildren<TemporaryStatus>();
+
+        foreach (TemporaryStatus temp in status)
+        {
+            if (temp.name == StatusToInflict.name)
+            {
+                temp.CurrentCuration = temp.InitialDuration;
+            }
+        }
     }
 }

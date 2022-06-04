@@ -84,5 +84,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a32661be49f7001488be9d4d15a16792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StatusToInflict: {fileID: 2651437613011973009, guid: 30b7f0fa3c798a54cb6df3816be94ca2, type: 3}
-  stackable: 1
+  StatusToInflict: {fileID: 8781348984756697767, guid: 30b7f0fa3c798a54cb6df3816be94ca2, type: 3}
+  Stackable: 0

@@ -360,7 +360,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1571089811632803690, guid: 2eb480585ff4c794ebad89be649a0af1, type: 3}
       propertyPath: Stackable
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1571089811632803690, guid: 2eb480585ff4c794ebad89be649a0af1, type: 3}
       propertyPath: doNotStack

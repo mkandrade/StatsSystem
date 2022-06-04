@@ -75,5 +75,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 0
-  InitialDuration: 2
-  CurrentCuration: 1
+  InitialDuration: 5
+  CurrentCuration: 5

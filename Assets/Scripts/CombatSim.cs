@@ -43,7 +43,7 @@ public class CombatSim : MonoBehaviour
             Defender = Attacker;
             Attacker = lastAttacked;
 
-            yield return new WaitForSecondsRealtime(1.5f);
+            yield return new WaitForSecondsRealtime(1);
 
         } while (lastAttacked.GetStat(StatEnum.HP).Value > 0);
         Debug.LogFormat("{0} was killed", lastAttacked.name);
