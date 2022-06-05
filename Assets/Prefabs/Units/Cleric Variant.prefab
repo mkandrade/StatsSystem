@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4725908035260460180, guid: c2fb672a9ee884744a9549875b19998c, type: 3}
       propertyPath: m_Name
-      value: Cleric
+      value: Cleric Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725908035260460181, guid: c2fb672a9ee884744a9549875b19998c, type: 3}
+      propertyPath: Stats.Array.data[0].Value
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 4725908035260460182, guid: c2fb672a9ee884744a9549875b19998c, type: 3}
       propertyPath: m_RootOrder

@@ -5,17 +5,12 @@ using UnityEngine;
 public class CombatSim : MonoBehaviour
 {
 
-    public Unit Attacker;
-    public Unit Defender;
+    public Transform Graveyard;
+    TurnOrderController turnOrderController;
 
-    public StatEnum Stat;
-
-    [ContextMenu("PrintStat")]
-    void PrintStat()
+    void Awake()
     {
-        Debug.LogFormat("Value: {0}, Score: {1}",
-            Attacker.GetStat(Stat).Value,
-            Attacker.GetAbilityScore(Stat));
+        turnOrderController = GetComponent<TurnOrderController>();
     }
 
     [ContextMenu("StartFight")]
@@ -27,17 +22,19 @@ public class CombatSim : MonoBehaviour
 
     IEnumerator Fight()
     {
-        Unit lastAttacked;
         do
         {
-            Debug.LogFormat("{0}'s turn", Attacker.name);
-            // CHama efeitos de começo do turno da unidade
-            Attacker.OnturnBegin();
+            Unit attacker = GetAttacker();
+            Unit target = null;
 
-            Skill skill = GetSkills();
+            Debug.LogFormat("{0}'s turn", attacker.name);
+            // CHama efeitos de começo do turno da unidade
+            attacker.OnturnBegin();
+
+            Skill skill = GetSkills(attacker);
 
             // Faz o target conforme necessidade de cada skill
-            Unit target = skill.GetComponent<Targeting>().GetTarget();
+            target = skill.GetComponent<Targeting>().GetTarget();
 
             // Posibila que Tenha Targets diferentes, que não necessariamente consigam encontrar algum alvo adequado, dependendo da situação.
             if (target != null)
@@ -49,42 +46,68 @@ public class CombatSim : MonoBehaviour
                 Debug.Log("No valid target");
             }
 
-
-            lastAttacked = Defender;
-            Defender = Attacker;
-            Attacker = lastAttacked;
+            // Depois de atacar, retorna ao final da fila
+            turnOrderController.Units.Enqueue(attacker);
 
             yield return new WaitForSecondsRealtime(1);
 
-        } while (lastAttacked.GetStat(StatEnum.HP).Value > 0);
-        Debug.LogFormat("{0} was killed", lastAttacked.name);
+        } while (!CheckForGameOver());
+        Debug.Log("END FIGHT");
     }
 
-    [ContextMenu("AddModifier")]
-    void AddModifier()
+    Skill GetSkills(Unit attacker)
     {
-        //Important
-        AddValueModifier mod = Attacker.transform.Find("Modifiers").gameObject.AddComponent<AddValueModifier>();
-        mod.Value = 10;
-        mod.Type = Stat;
-    }
-
-    [ContextMenu("MultiModifier")]
-    void MultiModifier()
-    {
-        //Important
-        MultiValueModifier mod = Attacker.transform.Find("Modifiers").gameObject.AddComponent<MultiValueModifier>();
-        mod.Value = 10;
-        mod.Type = Stat;
-    }
-
-    Skill GetSkills()
-    {
-        Skill[] skills = Attacker.GetComponentsInChildren<Skill>();
+        Skill[] skills = attacker.GetComponentsInChildren<Skill>();
         int roll = Random.Range(0, skills.Length);
-
-        Debug.LogFormat("{0} USED {1}", Attacker.name, skills[roll].name);
         return skills[roll];
+    }
+
+    Unit GetAttacker()
+    {
+        while (turnOrderController.Units.Count != 0)
+        {
+            Unit attacker = turnOrderController.Units.Dequeue();
+            if (attacker != null && attacker.GetStat(StatEnum.HP).Value > 0)
+            {
+                return attacker;
+            }
+        }
+        return null;
+    }
+
+    bool CheckForGameOver()
+    {
+        if (!IsTeamAlive(turnOrderController.Team1Units))
+        {
+            Debug.Log("Team 1 is Dead!");
+            return true;
+        }
+        if (!IsTeamAlive(turnOrderController.Team2Units))
+        {
+            Debug.Log("Team 2 is Dead!");
+            return true;
+        }
+
+        return false;
+    }
+
+    bool IsTeamAlive(List<Unit> units)
+    {
+        bool anyUnitAlive = false;
+        for (int i = 0; i < units.Count; i++)
+        {
+            if (units[i].GetStat(StatEnum.HP).Value > 0)
+            {
+                anyUnitAlive = true;
+            }
+            else
+            {
+                units[i].transform.SetParent(Graveyard);
+                units.RemoveAt(i);
+                i--;
+            }
+        }
+        return anyUnitAlive;
     }
 
 }
