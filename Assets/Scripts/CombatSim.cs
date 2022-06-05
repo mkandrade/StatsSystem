@@ -49,7 +49,7 @@ public class CombatSim : MonoBehaviour
             // Depois de atacar, retorna ao final da fila
             turnOrderController.Units.Enqueue(attacker);
 
-            yield return new WaitForSecondsRealtime(1);
+            yield return new WaitForSecondsRealtime(1.5f);
 
         } while (!CheckForGameOver());
         Debug.Log("END FIGHT");

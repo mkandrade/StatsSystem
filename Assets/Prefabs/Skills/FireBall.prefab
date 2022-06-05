@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 784cb3b6d0685cb4fae4dd428937e9cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackerStat: 8
+  AttackerStats: []
   DefenderStat: 9
 --- !u!114 &6236542369992567176
 MonoBehaviour:
@@ -73,9 +73,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa6d1d92ac1766488135c9cc596b8c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitChanceObjective: 70
-  AttackerStat: 5
-  DefenderStat: 7
+  HitChanceObjective: 100
+  AttackerStat: 8
+  DefenderStat: 8
 --- !u!114 &7886547690846303047
 MonoBehaviour:
   m_ObjectHideFlags: 0

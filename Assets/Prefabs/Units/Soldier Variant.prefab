@@ -70,11 +70,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725908035260460181, guid: c2fb672a9ee884744a9549875b19998c, type: 3}
       propertyPath: Stats.Array.data[0].Value
-      value: 31
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4725908035260460181, guid: c2fb672a9ee884744a9549875b19998c, type: 3}
       propertyPath: Stats.Array.data[1].Value
-      value: 31
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4725908035260460181, guid: c2fb672a9ee884744a9549875b19998c, type: 3}
       propertyPath: Stats.Array.data[2].Value
@@ -94,15 +94,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725908035260460181, guid: c2fb672a9ee884744a9549875b19998c, type: 3}
       propertyPath: Stats.Array.data[6].Value
-      value: 20
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 4725908035260460181, guid: c2fb672a9ee884744a9549875b19998c, type: 3}
       propertyPath: Stats.Array.data[7].Value
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4725908035260460181, guid: c2fb672a9ee884744a9549875b19998c, type: 3}
       propertyPath: Stats.Array.data[9].Value
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4725908035260460182, guid: c2fb672a9ee884744a9549875b19998c, type: 3}
       propertyPath: m_RootOrder

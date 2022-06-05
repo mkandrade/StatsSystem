@@ -20,9 +20,8 @@ public class DamageEffect : Effect
         Debug.LogFormat("AttackerScore:{0}, DefenderScore:{1}, score:{2}, roll:{3}, finalScore:{4}",
         attackerScore, defenderScore, score, roll, finalScore);
 
-        //
-
         defender.ChangeHP(Mathf.Min(0, Mathf.CeilToInt(-finalScore)));
+
         Debug.LogFormat("{0} suffered {1} damage", defender.name, -finalScore);
     }
 

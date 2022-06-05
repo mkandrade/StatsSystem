@@ -127,11 +127,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725908035260460181, guid: c2fb672a9ee884744a9549875b19998c, type: 3}
       propertyPath: Stats.Array.data[0].Value
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4725908035260460181, guid: c2fb672a9ee884744a9549875b19998c, type: 3}
       propertyPath: Stats.Array.data[1].Value
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 4725908035260460181, guid: c2fb672a9ee884744a9549875b19998c, type: 3}
       propertyPath: Stats.Array.data[2].Value
@@ -151,11 +151,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4725908035260460181, guid: c2fb672a9ee884744a9549875b19998c, type: 3}
       propertyPath: Stats.Array.data[6].Value
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4725908035260460181, guid: c2fb672a9ee884744a9549875b19998c, type: 3}
       propertyPath: Stats.Array.data[7].Value
-      value: 18
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4725908035260460181, guid: c2fb672a9ee884744a9549875b19998c, type: 3}
       propertyPath: Stats.Array.data[9].Value
