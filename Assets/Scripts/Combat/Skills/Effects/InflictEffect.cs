@@ -20,7 +20,7 @@ public class InflictEffect : Effect
         }
 
         Status status = Instantiate(StatusToInflict, Vector3.zero, Quaternion.identity, statusHolder);
-        status.name = status.name.Replace(("(Clone)"), "");
+        status.name = status.name.Replace("(Clone)", "");
         status.SetActors(attacker, defender);
     }
 
@@ -30,16 +30,14 @@ public class InflictEffect : Effect
         {
             return true;
         }
-
-        // Caso encontre algum status com o mesmo status, return false
         for (int i = 0; i < statusHolder.childCount; i++)
         {
             if (statusHolder.GetChild(i).name == StatusToInflict.name)
             {
                 return false;
+                //TODO reset duration when we have duration 
             }
         }
-
         return true;
     }
 

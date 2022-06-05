@@ -77,5 +77,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackerStats:
   - Stat: 4
-    Multiplier: 0.1
+    Multiplier: 0.5
   DefenderStat: 6

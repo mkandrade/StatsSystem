@@ -75,5 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 0
-  InitialDuration: 5
-  CurrentCuration: 5
+  Caster: {fileID: 0}
+  Host: {fileID: 0}
+  InitialDuration: 3
+  CurrentCuration: 3

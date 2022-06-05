@@ -15,24 +15,24 @@ public class DamageEffect : Effect
 
         float score = attackerScore - (defenderScore / 2);
         float roll = 1 + Random.Range(-Variance, Variance);
+        float finalScore = score * roll;
 
-        float finalScore = roll * score;
+        Debug.LogFormat("AttackerScore:{0}, DefenderScore:{1}, score:{2}, roll:{3}, finalScore:{4}",
+        attackerScore, defenderScore, score, roll, finalScore);
 
-        // Para Apenas Retirar Vida -finalScore
+        //
+
         defender.ChangeHP(Mathf.Min(0, Mathf.CeilToInt(-finalScore)));
-
-        Debug.LogFormat("{0} Suffered {1} of Damage",
-            defender.name, finalScore);
+        Debug.LogFormat("{0} suffered {1} damage", defender.name, -finalScore);
     }
 
-    float StatSCalculateScore(Unit unit,
-        List<StatsEffectiveness> statsToCalculate)
+    float StatSCalculateScore(Unit unit, List<StatsEffectiveness> stats)
     {
         float sum = 0;
-        foreach (StatsEffectiveness statType in statsToCalculate)
+        foreach (StatsEffectiveness stat in stats)
         {
-            float score = unit.GetAbilityScore(statType.Stat);
-            sum += score * statType.Multiplier;
+            float score = unit.GetAbilityScore(stat.Stat);
+            sum += score * stat.Multiplier;
         }
         return sum;
     }

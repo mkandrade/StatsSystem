@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HitChanceStatBased : HitChance
 {
-    //Chance media de acertar
     public float HitChanceObjective = 70;
 
     public StatEnum AttackerStat;
@@ -17,7 +16,7 @@ public class HitChanceStatBased : HitChance
 
         float score = (attackerScore - defenderScore) * 2;
         float finalScore = score + HitChanceObjective;
-        int roll = Random.Range(0, 101);
+        float roll = Random.Range(0, 101);
 
         if (roll > finalScore)
         {

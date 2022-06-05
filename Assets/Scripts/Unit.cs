@@ -15,7 +15,6 @@ public class Unit : MonoBehaviour
     void SetStats()
     {
         Stats = new Stat[(int)StatEnum.Wisdom + 1];
-
         for (int i = 0; i < Stats.Length; i++)
         {
             Stats[i] = new Stat();
@@ -29,7 +28,7 @@ public class Unit : MonoBehaviour
     {
         for (int i = 0; i < Stats.Length; i++)
         {
-            Stats[i].Value = Random.Range(0, 20);
+            Stats[i].Value = Random.Range(1, 21);
         }
 
 
@@ -49,13 +48,9 @@ public class Unit : MonoBehaviour
 
         foreach (StatModifier mod in GetComponentsInChildren<StatModifier>())
         {
-            if (mod.Type == type)
-            {
+            if (type == mod.Type)
                 mod.ChangeValue(modifiedValue);
-            }
-
         }
-        Debug.LogFormat("Initial: {0}, Modded: {1}", modifiedValue.InitialValue, modifiedValue.ModdedValue);
         return Mathf.FloorToInt(modifiedValue.ModdedValue);
     }
 
@@ -63,9 +58,7 @@ public class Unit : MonoBehaviour
     {
         Stat hp = GetStat(StatEnum.HP);
         float tempValue = hp.Value + value;
-
         float clampedValue = Mathf.Clamp(tempValue, 0, GetStat(StatEnum.MaxHP).Value);
-
         hp.Value = clampedValue;
     }
 }
